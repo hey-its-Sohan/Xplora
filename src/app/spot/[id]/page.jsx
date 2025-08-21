@@ -4,8 +4,8 @@ import { ObjectId } from 'mongodb';
 import React from 'react';
 
 const page = async ({ params }) => {
-  const p = await params
-  const data = await dbConnect('spotCollection').findOne({ _id: new ObjectId(p.id) })
+  const { id } = params
+  const data = await dbConnect('spotCollection').findOne({ _id: new ObjectId(id) });
   const spot = {
     ...data,
     _id: data._id.toString(),
