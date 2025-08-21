@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
@@ -17,17 +18,20 @@ const Navbar = () => {
               <li><a>Item 3</a></li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <h1 className='text-2xl font-bold'>Xplore</h1>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-            <li><a>Item 3</a></li>
+          <ul className="menu space-x-5 menu-horizontal px-1">
+            <li className='text-lg'><Link href={'/'}>Home</Link></li>
+            <li className='text-lg'><Link href={'all'}>All Places</Link></li>
+            <li className='text-lg'><Link href={'add'}>Add New Xplore</Link></li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+
+          <button className='btn mr-3 border-none px-5 rounded-lg hover:shadow-md hover:to-purple-700 bg-gradient-to-r from-indigo-600 to-purple-600 text-white'>Login</button>
+          <button className='btn btn-outline btn-primary rounded-lg'>Sign Up</button>
+
         </div>
       </div>
     </div>

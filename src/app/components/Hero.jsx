@@ -20,8 +20,8 @@ const Hero = () => {
 
         {/* content goes here */}
         <div className="relative z-10 flex flex-col items-center justify-center py-32 md:py-48  text-center">
-          <h1 className="text-4xl font-bold mb-4">Discover Hidden Gems Near You</h1>
-          <h3 className="text-lg mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Discover Hidden Gems Near You</h1>
+          <h3 className="text-xl mb-6">
             Explore local shops, unique experiences, and services right in your city.
           </h3>
           <div className="space-x-4">

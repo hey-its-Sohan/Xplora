@@ -1,5 +1,6 @@
 import dbConnect from '@/lib/dbConnect';
 import { Star, ExternalLink, MapPin } from "lucide-react";
+import Link from 'next/link';
 
 const Spots = async () => {
   const spots = await dbConnect('spotCollection').find().limit(6).toArray();
@@ -54,12 +55,14 @@ const Spots = async () => {
 
 
                 {/* View Details Button */}
-                <button
-                  className="w-full btn rounded-lg group-hover:bg-gradient-to-r from-indigo-500 to-purple-600 group-hover:text-white"
-                >
-                  View Details
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </button>
+                <Link href={`/spot/${spot._id}`}>
+                  <button
+                    className="w-full btn rounded-lg group-hover:bg-gradient-to-r from-indigo-500 to-purple-600 group-hover:text-white"
+                  >
+                    View Details
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

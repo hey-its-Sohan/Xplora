@@ -3,9 +3,9 @@ import React from 'react';
 
 const CTA = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+    <section className="py-16 ">
       <div className="max-w-screen-xl mx-auto px-5 lg:px-0">
-        <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-8 md:p-12 shadow-lg overflow-hidden relative">
           {/* Decorative elements */}
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full"></div>
           <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-white/10 rounded-full"></div>
@@ -52,7 +52,7 @@ const CTA = () => {
 
             <div className="bg-white rounded-xl p-6 shadow-lg max-w-md mx-auto">
               <button
-                className="w-full flex gap-2 justify-center items-center bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
+                className="w-full flex gap-2 justify-center items-center bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
               >
                 Join Xplore Now <ArrowRight className='h-5 w-5' />
               </button>
