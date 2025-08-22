@@ -26,27 +26,27 @@ Live Link: https://xplore-blond.vercel.app
 ## 🚀 Quick Setup
 
 ### Prerequisites
-- Node.js **16.8 or later**  
+- Node.js 16.8 or later  
 - MongoDB connection string  
 - Google OAuth credentials  
 
 ### Installation Steps
-1. **Clone and install dependencies**
-   ```bash
-   git clone https://github.com/your-username/xplore.git
-   cd xplore
-   npm install
+1. Clone and install dependencies  
+   `git clone https://github.com/your-username/xplore.git`  
+   `cd xplore`  
+   `npm install`  
 
- 2. **Environment Setup**
+2. Environment Setup  
+   Create a `.env.local` file in the root directory with your MongoDB URI, NextAuth secret, site URL, and Google OAuth credentials.
+   ```env
+      MONGODB_URI=your_mongodb_connection_string
+      NEXTAUTH_SECRET=your_nextauth_secret
+      NEXTAUTH_URL=http://localhost:3000
+      GOOGLE_CLIENT_ID=your_google_oauth_client_id
+      GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
 
-Create a `.env.local` file in the root directory with the following variables:
-
-```env
-MONGODB_URI=your_mongodb_connection_string
-NEXTAUTH_SECRET=your_nextauth_secret
-NEXTAUTH_URL=http://localhost:3000
-GOOGLE_CLIENT_ID=your_google_oauth_client_id
-GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
+3. Run the Development Server  
+   `npm run dev`  
 
 ---
 
@@ -64,7 +64,7 @@ GOOGLE_CLIENT_SECRET=your_google_oauth_client_secret
 
 ### ⚙️ API Routes
 - `/api/auth/[...nextauth]` → NextAuth.js authentication endpoints  
-- `/api/places` → CRUD operations for spots ( POST)  
+- `/api/places` → CRUD operations for spots (POST)  
 - `/api/spot/[id]` → Individual spot operations (GET, PUT, DELETE)  
 
 ---
@@ -75,11 +75,5 @@ Please feel free to submit issues, feature requests, or pull requests.
 
 ---
 
-## 📌 License
-This project is licensed under the MIT License.
-
----
-
 ## 🌍 Happy Exploring! ✨
 Discover the soul of your city with **Xplore** — where every corner holds a story waiting to be uncovered.
-
