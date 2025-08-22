@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Hero = () => {
@@ -25,12 +26,14 @@ const Hero = () => {
             Explore local shops, unique experiences, and services right in your city.
           </h3>
           <div className="space-x-4">
-            <button className="btn border-none bg-gradient-to-r from-indigo-500 to-purple-600 hover:to-purple-700 text-white rounded-md shadow-sm">
+            <Link href={'/allplaces'}><button className="btn border-none bg-gradient-to-r from-indigo-500 to-purple-600 hover:to-purple-700 text-white rounded-md shadow-sm">
               Explore Now
-            </button>
-            <button className="btn bg-gray-200 rounded-lg shadow">
-              Login to Add
-            </button>
+            </button></Link>
+            <Link href={'/login'}>
+              <button className="btn bg-gray-200 rounded-lg shadow">
+                Login to Add
+              </button>
+            </Link>
           </div>
         </div>
       </div>

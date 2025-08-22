@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const HowItWorks = () => {
@@ -66,9 +67,11 @@ const HowItWorks = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="btn btn-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold py-5 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
-            Get Started Now
-          </button>
+          <Link href={'/signup'}>
+            <button className="btn btn-lg bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold py-5 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+              Get Started Now
+            </button>
+          </Link>
         </div>
       </div>
     </section>

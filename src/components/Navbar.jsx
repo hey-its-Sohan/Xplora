@@ -1,13 +1,18 @@
 "use client"
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const { data: session, status } = useSession()
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
-    <div className='bg-base-100 shadow-sm'>
-      <div className=" max-w-screen-xl mx-auto px-5 lg:px-0 navbar ">
+    <div className=' shadow-sm bg-white/80 backdrop-blur-md fixed z-50 top-0 w-full'>
+      <div className="max-w-screen-xl mx-auto px-5 lg:px-0 navbar ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,18 +31,38 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu space-x-5 menu-horizontal px-1">
             <li className='text-lg'><Link href={'/'}>Home</Link></li>
-            <li className='text-lg'><Link href={'/all'}>All Places</Link></li>
+            <li className='text-lg'><Link href={'/allspots'}>All Places</Link></li>
             <li className='text-lg'><Link href={'/addplace'}>Add New Xplore</Link></li>
           </ul>
         </div>
         <div className="navbar-end">
-          {
-            status === 'authenticated' ? <><button onClick={() => signOut()} className='btn mr-3 border-none px-5 rounded-lg hover:shadow-md hover:to-purple-700 bg-gradient-to-r from-indigo-600 to-purple-600 text-white'>Logout</button></>
-              : <><Link href={'/login'}><button className='btn mr-3 border-none px-5 rounded-lg hover:shadow-md hover:to-purple-700 bg-gradient-to-r from-indigo-600 to-purple-600 text-white'>Login</button></Link>
-                <Link href={'/signup'}><button className='btn btn-outline btn-primary rounded-lg'>Sign Up</button></Link></>
-          }
+          {mounted && (
+            status === 'authenticated' ? (
+              <div className='flex items-center gap-3'>
+                <p className='hidden md:block'>{session?.user?.name}</p>
+                <button
+                  onClick={() => signOut()}
+                  className='btn mr-3 border-none px-5 rounded-lg hover:shadow-md hover:to-purple-700 bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
+                >
+                  Logout
+                </button>
 
-
+              </div>
+            ) : (
+              <>
+                <Link href={'/login'}>
+                  <button className='btn mr-3 border-none px-5 rounded-lg hover:shadow-md hover:to-purple-700 bg-gradient-to-r from-indigo-600 to-purple-600 text-white'>
+                    Login
+                  </button>
+                </Link>
+                <Link href={'/signup'}>
+                  <button className='btn btn-outline btn-primary rounded-lg'>
+                    Sign Up
+                  </button>
+                </Link>
+              </>
+            )
+          )}
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NextAuthProvider from "@/Providers/NextAuthProvider";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Xplora",
+  title: "Xplore",
   description: "",
 };
 
@@ -27,9 +28,11 @@ export default function RootLayout({ children }) {
       >
         <NextAuthProvider>
           <Navbar />
-          <main>
+          <ToastContainer />
+          <main className="mt-17">
             {children}
           </main>
+
           <Footer />
         </NextAuthProvider>
       </body>

@@ -1,10 +1,10 @@
 import React from 'react';
-import AddPlace from './component/AddPlace';
+import AllSpots from './components/AllSpots';
 
 const page = () => {
   return (
     <div>
-      <AddPlace />
+      <AllSpots />
     </div>
   );
 };

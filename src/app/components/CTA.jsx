@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 const CTA = () => {
@@ -51,11 +52,13 @@ const CTA = () => {
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-lg max-w-md mx-auto">
-              <button
-                className="w-full flex gap-2 justify-center items-center bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
-              >
-                Join Xplore Now <ArrowRight className='h-5 w-5' />
-              </button>
+              <Link href={'/signup'}>
+                <button
+                  className="w-full flex gap-2 justify-center items-center bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  Join Xplore Now <ArrowRight className='h-5 w-5' />
+                </button>
+              </Link>
 
               <p className="text-xs text-center text-gray-500 mt-4">
                 By signing up, you agree to our Terms and Privacy Policy.

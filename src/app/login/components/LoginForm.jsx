@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import SocialLogin from './SocialLogin';
 import { Lock, Mail, MoveLeft } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,10 +23,11 @@ const LoginForm = () => {
       });
 
       if (response?.ok) {
+        toast.success('Login Successfull!')
         form.reset()
       }
       else {
-        alert("Invalid email or password")
+        toast.error('Error! Failed to  Login .')
         console.log('Not ok');
       }
     } catch (error) {
