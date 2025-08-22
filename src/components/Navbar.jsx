@@ -21,9 +21,9 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li><a>Item 1</a></li>
-              <li><a>Parent</a></li>
-              <li><a>Item 3</a></li>
+              <li className='text-lg'><Link href={'/'}>Home</Link></li>
+              <li className='text-lg'><Link href={'/allspots'}>All Places</Link></li>
+              <li className='text-lg'><Link href={'/addplace'}>Add New Xplore</Link></li>
             </ul>
           </div>
           <h1 className='text-2xl font-bold'>Xplore</h1>
@@ -39,14 +39,13 @@ const Navbar = () => {
           {mounted && (
             status === 'authenticated' ? (
               <div className='flex items-center gap-3'>
-                <p className='hidden md:block'>{session?.user?.name}</p>
+                <p className='hidden text-lg md:block'>{session?.user?.name}</p>
                 <button
                   onClick={() => signOut()}
                   className='btn mr-3 border-none px-5 rounded-lg hover:shadow-md hover:to-purple-700 bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
                 >
                   Logout
                 </button>
-
               </div>
             ) : (
               <>

@@ -1,10 +1,12 @@
-import dbConnect from '@/lib/dbConnect';
+
 import Link from 'next/link';
 import { Star, ExternalLink, MapPin } from "lucide-react";
 import React from 'react';
-
+import dbConnect from '@/lib/dbConnect';
+export const dynamic = "force-dynamic";
 const AllSpots = async () => {
-  const spots = await dbConnect('spotCollection').find().toArray();
+  const spots = await dbConnect("spotCollection").find().toArray();
+
 
   return (
     <div className="min-h-screen bg-gray-50">

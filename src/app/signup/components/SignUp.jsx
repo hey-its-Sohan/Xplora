@@ -5,6 +5,7 @@ import { signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
   const router = useRouter()
@@ -41,7 +42,9 @@ const SignUp = () => {
         })
 
         if (loginRes && loginRes.ok) {
+          toast.success('Login Successfull!')
           router.push("/")
+
         } else {
           setErrorMessage("Login failed. Try again.")
         }

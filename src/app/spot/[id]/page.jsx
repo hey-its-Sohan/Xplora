@@ -1,11 +1,10 @@
 import Details from '@/components/Details';
-import dbConnect from '@/lib/dbConnect';
-import { ObjectId } from 'mongodb';
 import React from 'react';
 
 const page = async ({ params }) => {
-  const { id } = params
-  const data = await dbConnect('spotCollection').findOne({ _id: new ObjectId(id) });
+  const p = await params
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL ?? ''}/api/spot/${p.id}`)
+  const data = await res.json()
   const spot = {
     ...data,
     _id: data._id.toString(),

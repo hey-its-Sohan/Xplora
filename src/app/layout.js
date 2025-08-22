@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Xplore",
-  description: "",
+  description: "Discover hidden gems in your city",
 };
 
 export default function RootLayout({ children }) {
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <NextAuthProvider>
           <Navbar />
           <ToastContainer />
-          <main className="mt-17">
+          <main className="mt-16">
             {children}
           </main>
 

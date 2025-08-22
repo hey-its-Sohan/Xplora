@@ -1,6 +1,7 @@
 'use client'
 import { useSession } from 'next-auth/react';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const AddPlace = () => {
   const { data: session } = useSession()
@@ -62,7 +63,7 @@ const AddPlace = () => {
       const data = await res.json();
 
       if (res.ok) {
-        alert('Place added successfully!');
+        toast.success('Place added successfully!');
         setFormData({
           name: '',
           location: '',
@@ -299,31 +300,28 @@ const AddPlace = () => {
           {/* User Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
-                User Name *
-              </label>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
               <input
                 type="text"
                 id="name"
                 name="username"
-                value={session?.user?.name || 'username'}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
-                required
-                disabled
+                value={session?.user?.name || ''}
+                readOnly
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors cursor-not-allowed"
               />
             </div>
-
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 User Email *
               </label>
               <input
+                type='email'
                 id="category"
                 name="email"
-                value={session?.user?.email || 'user email'}
+                value={session?.user?.email || ''}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors"
-                required
-                disabled
+                readOnly
+
               >
               </input>
             </div>

@@ -2,25 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 
 const Details = ({ spot }) => {
-  // Sample spot data (would come from props in real implementation)
-  const sampleSpot = {
-    "name": "Ahsan Manzil",
-    "location": "Kumartoli, Dhaka",
-    "description": "A historic pink palace showcasing Mughal architecture, now a museum.",
-    "image": "https://res.cloudinary.com/dpwjurgeu/image/upload/w_1000/q_auto/f_auto/v1755762328/3a31d385-b9a4-4583-b6ce-b680b64e3a89.png",
-    "rating": 4.8,
-    "category": "Culture",
-    "hours": "10:00 AM - 5:00 PM (Closed on Thursdays)",
-    "features": [
-      "Iconic Mughal architecture",
-      "Museum with historical artifacts",
-      "Panoramic views of Buriganga River",
-      "Beautiful gardens and courtyards",
-      "Photography-friendly landmark"
-    ],
-    "details": "Ahsan Manzil, popularly known as the 'Pink Palace', is one of Dhaka’s most iconic landmarks and a symbol of the city’s rich history. Built in the 19th century, it was once the residence of the Nawab of Dhaka and played a central role in the city’s social and political life. Today, it has been restored and transformed into a museum that showcases the grandeur of Mughal-inspired architecture, antique furniture, portraits, and artifacts from the Nawabi era. Visitors can explore its spacious halls, grand staircases, and serene gardens while enjoying a picturesque view of the Buriganga River. Ahsan Manzil stands as a vibrant reminder of Dhaka’s cultural heritage and offers a fascinating glimpse into the lifestyle of Bengal’s aristocracy."
-  }
-    ;
 
   // passed spot data
   const currentSpot = spot;
