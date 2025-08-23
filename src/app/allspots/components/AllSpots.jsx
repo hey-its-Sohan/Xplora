@@ -5,7 +5,9 @@ import React from 'react';
 import dbConnect from '@/lib/dbConnect';
 export const dynamic = "force-dynamic";
 const AllSpots = async () => {
-  const spots = await dbConnect("spotCollection").find().toArray();
+  // const spots = await dbConnect("spotCollection").find().toArray();
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL ?? ''}/api/allplaces`)
+  const spots = await res.json()
 
 
   return (
